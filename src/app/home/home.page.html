@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Gerenciador de Tarefas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngIf="!tasks || tasks.length == 0">
+      <ion-text color="medium">      
+        <p style="text-align: center">Nenhuma tarefa foi cadastrada ainda!</p>
+      </ion-text>
+    </ng-container>
+
+    <ion-card button [routerLink]="['/task', task.id]" *ngFor="let task of tasks">
+      <ion-card-header >
+        <ion-card-subtitle> {{ task.date }}  </ion-card-subtitle>
+        <ion-card-title> {{ task.title }} </ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{ task.description }} 
+       </ion-card-content>          
+    </ion-card> 
+  </ion-list>
+
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/task" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ </ion-content>
+

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="fGroup">
+  <ion-list lines="full">
+    <ion-item> 
+      <ion-label position="floating">Título</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item> 
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-item> 
+      <ion-label position="floating">Data</ion-label>
+      <ion-input type="text" formControlName="date"></ion-input>
+    </ion-item>
+  </ion-list>
+</form>
+
+  <ion-button expand="full" (click)="saveTask()" [disabled]="!fGroup.valid">Salvar</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button color="danger" (click)="onDeleteTask(taskId)" routerLink="/" routerDirection="forward">
+          <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content> 
+
