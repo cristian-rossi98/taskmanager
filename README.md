@@ -1,5 +1,5 @@
 Para executar o código do projeto os seguintes passos devem ser seguidos:
-1. Instalar o Node.JS
+1. Instalar o [Node.JS](https://nodejs.org/en/download/) 
 2. Instalar a versão mais recente do Apache Cordova
 ```
 npm install -g cordova
